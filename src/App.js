@@ -25,7 +25,6 @@ function App(props) {
       </Router>
     </div>
   );
-
 }
 
 export default App;
