@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import News from './data/news.json';
 import navItems from './data/navItems.json';
 import './App.css';
 import AppNav from './components/AppNav/AppNav.js';
@@ -9,13 +8,13 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 function App(props) {
+  // State Declarations
   const [navItemsData, setNavItemsData] = useState(navItems);
-
 
   return (
     <div>
-      <hr />
-      <AppNav navItems={navItemsData} handleNavClick={(clickedItem) => { console.log(clickedItem) }} />
+      <AppNav navItems={ navItemsData } handleNavClick={(clickedItem) => { console.log(clickedItem) }} />
+      <hr className='featurette'/>
       <Router>
         <div>
           <Route exact path='/' component={HomePage}/>

@@ -1,33 +1,23 @@
-import React, { Component } from 'react';
 
-class AppNav extends Component {
-  render() {
-    const { navItems, handleNavClick } = this.props;
 
-    return (
-      <nav>
-        {navItems.map((navItem, index) =>
-          <a href="#" key={ index } onClick={ () => handleNavClick(navItem.value)} >
-           | {navItem.label} |
-          </a>
-        )}
-      </nav>
-    )
+function AppNav(props) {
+    const renderNavItems = () => {
+    let elements = props.navItems.map((item, index) => {
+      return (
+          <a href='#' key={index} onClick={ () => props.handleNavClick(item.value) }> 
+          | { item.label } | 
+          </a> 
+      )
+    })
+    return <span>
+      { elements }
+    </span>
   }
+  return (
+    <nav>
+      { renderNavItems() }
+    </nav>
+  )
 }
 
 export default AppNav;
-
-
-// Functional solution:
-// function AppNav({ navItems, handleNavClick }) {
-//   return (
-//     <nav>
-//       {navItems.map((navItem) =>
-//         <a href="#" onClick={() => handleNavClick(navItem.value)} >
-//           {navItem.label} |
-//         </a>
-//       )}
-//     </nav>
-//   );
-// }
