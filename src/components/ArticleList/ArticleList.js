@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
 import ArticleTeaser from '../ArticleTeaser/ArticleTeaser.js'
 import { ListGroup } from 'react-bootstrap'
 
-class ArticleList extends Component {
-  getAllTeasers = (articles) => {
+
+function ArticleList(props) {
+  let articles = props.articles
+
+  const getAllTeasers = (articles) => {
     return articles.map((article, idx) => {
-      return <ArticleTeaser key={idx} id={idx} title={ article.title } created_date={article.created_date} handleTitleClick={this.props.handleTitleClick} />
+      return <ArticleTeaser key={idx} id={idx} title={ article.title } created_date={article.created_date} handleTitleClick={props.handleTitleClick} />
     })
   }
 
-  render() {
-    return (
-      <div>
-        { this.getAllTeasers(this.props.articles) } 
-      </div>
-    );
-  }
+  return (
+    <div>
+      { getAllTeasers(articles) }
+    </div>
+  )
 }
 
 export default ArticleList;
