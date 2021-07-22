@@ -4,19 +4,9 @@ import News from '../data/news.json';
 function HomePage(props) {
   return (
     <div>
-      <ArticleList articles={ News } handleTitleClick={(articleID) => this.props.history.push(`/articles/${articleID}`) } />
+      <ArticleList articles={ News } handleTitleClick={(articleID) => props.history.push(`/articles/${articleID}`) } />
     </div>
   )
 }
-
-// class HomePage extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <ArticleList articles={News} handleTitleClick={(articleID) => this.props.history.push(`/articles/${articleID}`) } />
-//       </div>
-//     );
-//   }
-// }
 
 export default HomePage;
