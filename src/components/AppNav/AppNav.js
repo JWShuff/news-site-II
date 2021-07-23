@@ -1,12 +1,14 @@
-
+import { Navbar, NavLink } from "react-bootstrap"
 
 function AppNav(props) {
     const renderNavItems = () => {
     let elements = props.navItems.map((item, index) => {
       return (
-          <a href='#' key={index} onClick={ () => props.handleNavClick(item.value) }> 
-          | { item.label } | 
-          </a> 
+          <Navbar.Text>
+            <a href='#' key={index} onClick={ () => props.handleNavClick(item.value) }> 
+          | { item.label } |
+            </a> 
+          </Navbar.Text> 
       )
     })
     return <span>
@@ -14,9 +16,9 @@ function AppNav(props) {
     </span>
   }
   return (
-    <nav>
+    <Navbar bg='secondary' variant='light' fixed='top' >
       { renderNavItems() }
-    </nav>
+    </Navbar>
   )
 }
 
