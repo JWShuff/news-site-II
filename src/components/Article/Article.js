@@ -1,14 +1,14 @@
-
+import { Card } from 'react-bootstrap'
 
 function Article(props) {
   return (
-    <div>
-      <h1> {props.title} </h1>
-      <p> {props.created_date} </p>
-      { props.byline && <h2> { props.byline }</h2>}
-      { props.multimedia[0] && <img alt={ props.title } src={ props.multimedia[0].url }/> }
-      <p> { props.abstract }</p>
-    </div>
+    <Card style={{ width: '30rem' }}>
+      { props.multimedia[0] && <Card.Img  version='top' alt={ props.title } src={ props.multimedia[0].url }/> }
+      <Card.Title> {props.title} </Card.Title>
+      <Card.Subtitle> {props.created_date} </Card.Subtitle>
+      { props.byline && <Card.Text> { props.byline }</Card.Text>}
+      <Card.Body> { props.abstract }</Card.Body>
+    </Card>
   )
 }
 
