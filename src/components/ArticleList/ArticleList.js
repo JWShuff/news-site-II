@@ -7,14 +7,18 @@ function ArticleList(props) {
 
   const getAllTeasers = (articles) => {
     return articles.map((article, idx) => {
-      return <ArticleTeaser key={idx} id={idx} title={ article.title } created_date={article.created_date} handleTitleClick={props.handleTitleClick} />
+      return(
+        <ListGroup.Item action variant='dark' className='shadow my-1' >
+          <ArticleTeaser key={idx} id={idx} title={ article.title } created_date={article.created_date} handleTitleClick={props.handleTitleClick} />
+        </ListGroup.Item>
+      ) 
     })
   }
 
   return (
-    <div>
+    <ListGroup bg='dark'>
       { getAllTeasers(articles) }
-    </div>
+    </ListGroup>
   )
 }
 

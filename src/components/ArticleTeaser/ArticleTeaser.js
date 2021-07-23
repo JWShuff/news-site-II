@@ -1,19 +1,19 @@
-
+import { Card } from "react-bootstrap";
 
 function ArticleTeaser(props) {
   
   return (
-    <div>
-      <a href='#' onClick={ (event) => {
+    <Card bg='secondary' text='light'>
+      <Card.Link action as='btn' bg='light' text='dark' href='#' onClick={ (event) => {
         props.handleTitleClick(props.id+1);
         event.preventDefault();
         }}>
         { props.title } 
-      </a>
+      </Card.Link>
       <p>
         { props.created_date }
       </p>
-    </div>
+    </Card>
   )
 }
 
