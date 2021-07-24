@@ -1,4 +1,4 @@
-import { Navbar, NavItem, NavLink } from "react-bootstrap"
+import { Navbar } from "react-bootstrap"
 
 function AppNav(props) {
     const renderNavItems = () => {
@@ -11,9 +11,11 @@ function AppNav(props) {
           </Navbar.Text> 
       )
     })
-    return <span>
-      { elements }
-    </span>
+    return (
+      <span>
+        { elements }
+      </span>
+    )
   }
   return (
     <div>
